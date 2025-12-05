@@ -1,0 +1,58 @@
+[
+  {
+    "timestamp": "2024-12-05T10:30:00",
+    "rating": 5,
+    "review": "Amazing food! The service was exceptional and the atmosphere was perfect. Will definitely come back!",
+    "ai_response": "Thank you so much for your wonderful feedback! We're thrilled to hear you enjoyed your experience with us. We look forward to serving you again soon!",
+    "summary": "The customer had an excellent experience with great food, exceptional service, and a perfect atmosphere, and plans to return.",
+    "actions": "Recognize and reward the staff members who provided exceptional service to maintain high morale and encourage continued excellent performance.\nMaintain and improve the quality of food to ensure consistency and meet customer expectations.\nMonitor and preserve the atmosphere to ensure it remains perfect for all customers."
+  },
+  {
+    "timestamp": "2024-12-05T11:15:00",
+    "rating": 2,
+    "review": "The food was cold and the service was very slow. Not happy with this experience.",
+    "ai_response": "We sincerely apologize for your disappointing experience. Your feedback about the cold food and slow service is taken very seriously. We'd like to make this right - please contact our manager so we can address these issues.",
+    "summary": "The customer had a poor experience due to cold food and slow service.",
+    "actions": "Implement a system to ensure that food is served at the correct temperature, such as using thermometers or expediting food delivery.\nProvide additional training to servers to improve their efficiency and attentiveness, reducing wait times for customers.\nConduct a review of kitchen workflows and staffing levels to identify and address any bottlenecks that may be contributing to slow service."
+  },
+  {
+    "timestamp": "2024-12-05T12:00:00",
+    "rating": 4,
+    "review": "Good experience overall. Food was tasty but had to wait a bit longer than expected for our order.",
+    "ai_response": "Thank you for your honest feedback! We're glad you enjoyed the food. We apologize for the longer wait time and are working to improve our service speed. We appreciate your patience!",
+    "summary": "The customer had a generally good experience, with tasty food, but had to wait longer than expected for their order.",
+    "actions": "Improve kitchen efficiency to reduce wait times for orders.\nImplement a system to provide accurate wait time estimates to customers.\nEnhance customer communication during delays to manage expectations and provide updates."
+  },
+  {
+    "timestamp": "2024-12-05T13:45:00",
+    "rating": 3,
+    "review": "It was okay. Nothing special but nothing terrible either. Average experience.",
+    "ai_response": "Thank you for sharing your feedback with us. We appreciate your honesty and would love the opportunity to exceed your expectations on your next visit. Please let us know if there's anything specific we can improve.",
+    "summary": "The customer had an average experience, neither particularly good nor bad.",
+    "actions": "Identify areas where the customer's expectations were not exceeded to understand what \"average\" means for their business.\nGather feedback from similar 3-star reviews to find patterns and opportunities for improvement.\nDevelop strategies to surprise and delight customers, moving them from \"average\" to a more positive experience."
+  },
+  {
+    "timestamp": "2024-12-05T14:30:00",
+    "rating": 5,
+    "review": "Best restaurant in town! The staff went above and beyond to make our anniversary special. Highly recommend!",
+    "ai_response": "We're so honored to have been part of your special anniversary celebration! Thank you for the glowing review. Our team loves hearing that their efforts made your experience memorable. We can't wait to welcome you back!",
+    "summary": "The customer highly recommends the restaurant, praising the staff for making their anniversary special.",
+    "actions": "Recognize and reward the staff for their exceptional service to encourage continued excellence.\nImplement a system to identify and cater to special occasions, such as anniversaries, to consistently exceed customer expectations.\nConsider a customer feedback mechanism to identify areas of improvement and build on successes."
+  },
+  {
+    "timestamp": "2025-12-05T22:18:58.473807",
+    "rating": 4,
+    "review": "The food was good but the service is slow",
+    "ai_response": "Thank you for taking the time to share your feedback. We're glad you enjoyed the food, but sorry to hear that the service was slow. We'll take your comments on board to improve our service speed, and we hope to serve you better next time.",
+    "summary": "The customer found the food to be good, but was dissatisfied with the slow service.",
+    "actions": "Increase the number of servers during peak hours to reduce wait times.\nImplement a system for tracking and expediting orders to improve efficiency.\nProvide additional training to servers on managing tables and prioritizing tasks."
+  },
+  {
+    "timestamp": "2025-12-05T22:25:33.606035",
+    "rating": 1,
+    "review": "The table was damages and waiter was rude, terrible experience",
+    "ai_response": "Dear valued customer, \n\nWe apologize for the disappointing experience you had at our establishment. We take situations like damaged tables and poor service seriously and will address these issues with our staff. Thank you for sharing your feedback, we hope to have the opportunity to serve you better in the future.",
+    "summary": "The customer had a terrible experience due to a damaged table and rude waiter.",
+    "actions": "Inspect and replace damaged tables to improve overall dining ambiance and customer satisfaction.\nProvide additional training to wait staff on customer service and etiquette to prevent rudeness.\nConduct an investigation to identify the specific waiter involved and address their behavior through coaching or disciplinary action."
+  }
+]

@@ -1,0 +1,12 @@
+groq
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+jupyter
+notebook
+streamlit
+plotly
+requests
+python-dotenv
