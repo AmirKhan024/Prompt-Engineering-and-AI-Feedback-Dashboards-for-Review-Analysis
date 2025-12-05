@@ -14,7 +14,9 @@ st.set_page_config(page_title="Admin Dashboard", page_icon="📊", layout="wide"
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-DATA_FILE = "../data/reviews.json"
+# Get the directory where this script is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, "..", "data", "reviews.json")
 
 def load_reviews():
     if os.path.exists(DATA_FILE):
