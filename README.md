@@ -92,7 +92,7 @@ Access at: http://localhost:8502
 - Star rating selection (1-5)
 - Review text input
 - AI-generated personalized response
-- Data persistence to JSON
+- Data is stored in mongodb
 
 **Admin Dashboard:**
 - Live review feed
