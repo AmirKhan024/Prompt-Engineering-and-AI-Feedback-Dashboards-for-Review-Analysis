@@ -103,36 +103,6 @@ if len(reviews) > 0:
     
     st.markdown("---")
     
-    # Rating Distribution Chart - Fixed to show all ratings 1-5
-    rating_counts = pd.Series([r['rating'] for r in reviews]).value_counts().reindex([1, 2, 3, 4, 5], fill_value=0)
-    
-    fig1 = go.Figure(data=[
-        go.Bar(
-            x=[1, 2, 3, 4, 5],
-            y=rating_counts.values,
-            marker_color='steelblue',
-            text=rating_counts.values,
-            textposition='auto',
-        )
-    ])
-    
-    fig1.update_layout(
-        title="Rating Distribution",
-        xaxis_title="Star Rating",
-        yaxis_title="Count",
-        xaxis=dict(
-            tickmode='linear',
-            tick0=1,
-            dtick=1,
-            range=[0.5, 5.5]
-        ),
-        showlegend=False,
-        height=400
-    )
-    
-    st.plotly_chart(fig1, use_container_width=True)
-    
-    st.markdown("---")
     st.subheader("All Submissions")
     
     for idx, review in enumerate(reversed(reviews)):
