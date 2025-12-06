@@ -129,9 +129,6 @@ if len(reviews) > 0:
                 st.write("**AI Summary:**")
                 if 'summary' not in review:
                     summary = generate_summary(review['review'])
-                    review['summary'] = summary
-                    with open(DATA_FILE, 'w') as f:
-                        json.dump(reviews, f, indent=2)
                 else:
                     summary = review['summary']
                 st.success(summary)
@@ -139,9 +136,6 @@ if len(reviews) > 0:
                 st.write("**Recommended Actions:**")
                 if 'actions' not in review:
                     actions = generate_actions(review['rating'], review['review'])
-                    review['actions'] = actions
-                    with open(DATA_FILE, 'w') as f:
-                        json.dump(reviews, f, indent=2)
                 else:
                     actions = review['actions']
                 st.warning(actions)
