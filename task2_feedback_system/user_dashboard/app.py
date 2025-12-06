@@ -1,9 +1,9 @@
 import streamlit as st
-import json
 import os
 from datetime import datetime
 from groq import Groq
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 load_dotenv()
 
@@ -11,22 +11,27 @@ st.set_page_config(page_title="Review Feedback System", page_icon="⭐", layout=
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# Get the directory where this script is located
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(BASE_DIR, "..", "data", "reviews.json")
+# MongoDB connection
+@st.cache_resource
+def get_mongo_client():
+    mongo_uri = os.getenv("MONGODB_URI")
+    if not mongo_uri:
+        return None
+    return MongoClient(mongo_uri)
 
-def load_reviews():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, 'r') as f:
-            return json.load(f)
-    return []
+def get_reviews_collection():
+    mongo_client = get_mongo_client()
+    if mongo_client:
+        db = mongo_client['feedback_system']
+        return db['reviews']
+    return None
 
 def save_review(review_data):
-    reviews = load_reviews()
-    reviews.append(review_data)
-    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
-    with open(DATA_FILE, 'w') as f:
-        json.dump(reviews, f, indent=2)
+    collection = get_reviews_collection()
+    if collection:
+        collection.insert_one(review_data)
+    else:
+        st.error("Database connection not configured. Please set MONGODB_URI in secrets.")
 
 def generate_ai_response(rating, review_text):
     prompt = f"""You are a customer service assistant. A user has submitted a review with {rating} stars and the following text:

@@ -1,5 +1,4 @@
 import streamlit as st
-import json
 import os
 import pandas as pd
 from datetime import datetime
@@ -7,6 +6,7 @@ from groq import Groq
 from dotenv import load_dotenv
 import plotly.express as px
 import plotly.graph_objects as go
+from pymongo import MongoClient
 
 load_dotenv()
 
@@ -14,14 +14,26 @@ st.set_page_config(page_title="Admin Dashboard", page_icon="📊", layout="wide"
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# Get the directory where this script is located
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(BASE_DIR, "..", "data", "reviews.json")
+# MongoDB connection
+@st.cache_resource
+def get_mongo_client():
+    mongo_uri = os.getenv("MONGODB_URI")
+    if not mongo_uri:
+        return None
+    return MongoClient(mongo_uri)
+
+def get_reviews_collection():
+    mongo_client = get_mongo_client()
+    if mongo_client:
+        db = mongo_client['feedback_system']
+        return db['reviews']
+    return None
 
 def load_reviews():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, 'r') as f:
-            return json.load(f)
+    collection = get_reviews_collection()
+    if collection:
+        reviews = list(collection.find({}, {'_id': 0}))
+        return reviews
     return []
 
 def generate_summary(review_text):
