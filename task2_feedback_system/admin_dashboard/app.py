@@ -31,7 +31,7 @@ def get_reviews_collection():
 
 def load_reviews():
     collection = get_reviews_collection()
-    if collection:
+    if collection is not None:
         reviews = list(collection.find({}, {'_id': 0}))
         return reviews
     return []

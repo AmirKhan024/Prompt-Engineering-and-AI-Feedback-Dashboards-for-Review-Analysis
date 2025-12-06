@@ -28,7 +28,7 @@ def get_reviews_collection():
 
 def save_review(review_data):
     collection = get_reviews_collection()
-    if collection:
+    if collection is not None:
         collection.insert_one(review_data)
     else:
         st.error("Database connection not configured. Please set MONGODB_URI in secrets.")
